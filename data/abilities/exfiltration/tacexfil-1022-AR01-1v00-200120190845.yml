@@ -2,7 +2,7 @@
 
 - id: tacexfil-1022-AR01-1v00-200120190845
   name: Compress Data and lock with password for Exfiltration with winrar
-  description: .      Note: Requires winrar installation.      rar a -p"blue" hello.rar (VARIANT)
+  description: rar a -p"blue" hello.rar (VARIANT)
   tactic: exfiltration
   technique:
     attack_id: T1022
