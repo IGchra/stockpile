@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1085-AR02-1v00-200120190846
+  name: Rundll32 advpack.dll Execution
+  description: .      Test execution of a command using rundll32.exe with advpack.dll..  .      Reference: https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OSLibraries/Advpack.yml
+  tactic: multiple
+  technique:
+    attack_id: T1085
+    name: Rundll32
+  platforms:
+    windows:
+      cmd:
+        command: |
+          rundll32.exe advpack.dll,LaunchINFSection PathToAtomicsFolder\T1085\src\T1085.inf,DefaultInstall_SingleUser,1,

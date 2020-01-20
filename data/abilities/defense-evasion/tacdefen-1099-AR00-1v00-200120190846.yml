@@ -1,0 +1,18 @@
+---
+
+- id: tacdefen-1099-AR00-1v00-200120190846
+  name: Set a file's access timestamp
+  description: .      Stomps on the access timestamp of a file
+  tactic: defense-evasion
+  technique:
+    attack_id: T1099
+    name: Timestomp
+  platforms:
+    linux:
+      sh:
+        command: |
+          touch -a -t 197001010000.00 /opt/filename
+    darwin:
+      sh:
+        command: |
+          touch -a -t 197001010000.00 /opt/filename

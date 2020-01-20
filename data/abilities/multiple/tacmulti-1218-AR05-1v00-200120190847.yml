@@ -1,0 +1,13 @@
+---
+
+- id: tacmulti-1218-AR05-1v00-200120190847
+  name: Msiexec.exe - Execute Arbitrary DLL
+  description: .      Execute arbitrary DLL file stored locally. Commonly seen in application installation..  
+  tactic: multiple
+  technique:
+    attack_id: T1218
+    name: Signed Binary Proxy Execution
+  platforms:
+    windows:
+      cmd:
+        command: |

@@ -1,0 +1,21 @@
+---
+
+- id: tacdisco-1033-AR00-1v00-200120190845
+  name: System Owner/User Discovery
+  description: .      Identify System owner or users on an endpoint.  
+  tactic: discovery
+  technique:
+    attack_id: T1033
+    name: System Owner/User Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          cmd.exe /C whoami
+          wmic useraccount get /ALL
+          quser /SERVER:"computer1"
+          quser
+          qwinsta.exe" /server:computer1
+          qwinsta.exe
+          for /F "tokens=1,2" %i in ('qwinsta /server:computer1 ^| findstr "Active Disc"') do @echo %i | find /v "#" | find /v "console" || echo %j > usernames.txt
+          @FOR /F %n in (computers.txt) DO @FOR /F "tokens=1,2" %i in ('qwinsta /server:%n ^| findstr "Active Disc"') do @echo %i | find /v "#" | find /v "console" || echo %j > usernames.txt

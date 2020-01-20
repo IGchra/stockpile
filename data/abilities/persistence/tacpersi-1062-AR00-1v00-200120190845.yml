@@ -1,0 +1,16 @@
+---
+
+- id: tacpersi-1062-AR00-1v00-200120190845
+  name: Installing Hyper-V Feature
+  description: .      PowerShell command to check if Hyper-v is installed ..      Install Hyper-V feature..      Create a New-VM.  
+  tactic: persistence
+  technique:
+    attack_id: T1062
+    name: Hypervisor
+  platforms:
+    windows:
+      psh:
+        command: |
+          Get-WindowsFeature -Name Hyper-V -ComputerName test-vm
+          Install-WindowsFeature -Name Hyper-V -ComputerName test-vm -IncludeManagementTools
+          New-VM -Name testvm -MemoryStartupBytes 1GB -NewVHDPath C:\Temp\test.vhdx -NewVHDSizeBytes 21474836480

@@ -1,0 +1,13 @@
+---
+
+- id: tacmulti-1220-AR02-1v00-200120190847
+  name: WMIC bypass using local XSL file
+  description: .      Executes the code specified within a XSL script using a local payload.
+  tactic: multiple
+  technique:
+    attack_id: T1220
+    name: XSL Script Processing
+  platforms:
+    windows:
+      cmd:
+        command: |

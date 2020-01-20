@@ -1,0 +1,19 @@
+---
+
+- id: tacdisco-1063-AR00-1v00-200120190845
+  name: Security Software Discovery
+  description: .      Methods to identify Security Software on an endpoint.  
+  tactic: discovery
+  technique:
+    attack_id: T1063
+    name: Security Software Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          netsh.exe advfirewall firewall show all profiles
+          tasklist.exe
+          tasklist.exe | findstr /i virus
+          tasklist.exe | findstr /i cb
+          tasklist.exe | findstr /i defender
+          tasklist.exe | findstr /i cylance

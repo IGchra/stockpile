@@ -1,0 +1,14 @@
+---
+
+- id: taccolle-1119-AR01-1v00-200120190846
+  name: Automated Collection PowerShell
+  description: .      Automated Collection.  
+  tactic: collection
+  technique:
+    attack_id: T1119
+    name: Automated Collection
+  platforms:
+    windows:
+      psh:
+        command: |
+          Get-ChildItem -Recurse -Include *.doc | % {Copy-Item $_.FullName -destination c:\temp}

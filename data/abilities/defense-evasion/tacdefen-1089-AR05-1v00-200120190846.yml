@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1089-AR05-1v00-200120190846
+  name: Disable LittleSnitch
+  description: .      Disables LittleSnitch
+  tactic: defense-evasion
+  technique:
+    attack_id: T1089
+    name: Disabling Security Tools
+  platforms:
+    darwin:
+      sh:
+        command: |
+          sudo launchctl unload /Library/LaunchDaemons/at.obdev.littlesnitchd.plist

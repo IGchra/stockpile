@@ -1,0 +1,15 @@
+---
+
+- id: tacmulti-1118-AR00-1v00-200120190846
+  name: InstallUtil uninstall method call
+  description: .      Executes the Uninstall Method
+  tactic: multiple
+  technique:
+    attack_id: T1118
+    name: InstallUtil
+  platforms:
+    windows:
+      cmd:
+        command: |
+          C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /target:library /out:PathToAtomicsFolder\T1118\src\T1118.dll  PathToAtomicsFolder\T1118\src\T1118.cs 
+          C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe /logfile= /LogToConsole=false /U PathToAtomicsFolder\T1118\src\T1118.dll

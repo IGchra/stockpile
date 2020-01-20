@@ -1,0 +1,13 @@
+---
+
+- id: tacdisco-1083-AR00-1v00-200120190845
+  name: File and Directory Discovery
+  description: .      Find or discover files on the file system.  
+  tactic: discovery
+  technique:
+    attack_id: T1083
+    name: File and Directory Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |

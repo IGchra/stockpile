@@ -1,0 +1,18 @@
+---
+
+- id: tacdisco-1087-AR06-1v00-200120190846
+  name: Enumerate users and groups
+  description: .      Utilize local utilities to enumerate users and groups
+  tactic: discovery
+  technique:
+    attack_id: T1087
+    name: Account Discovery 
+  platforms:
+    darwin:
+      sh:
+        command: |
+          dscl . list /Groups
+          dscl . list /Users
+          dscl . list /Users | grep -v '_'
+          dscacheutil -q group
+          dscacheutil -q user

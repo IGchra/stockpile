@@ -1,0 +1,24 @@
+---
+
+- id: tacdisco-1083-AR03-1v00-200120190845
+  name: Nix File and Directory Discovery
+  description: .      Find or discover files on the file system.  
+  tactic: discovery
+  technique:
+    attack_id: T1083
+    name: File and Directory Discovery
+  platforms:
+    darwin:
+      sh:
+        command: |
+          cd $HOME && find . -print | sed -e 's;[^/]*/;|__;g;s;__|; |;g' > /tmp/loot.txt
+          cat /etc/mtab > /tmp/loot.txt
+          find . -type f -iname *.pdf > /tmp/loot.txt
+          find . -type f -name ".*"
+    linux:
+      sh:
+        command: |
+          cd $HOME && find . -print | sed -e 's;[^/]*/;|__;g;s;__|; |;g' > /tmp/loot.txt
+          cat /etc/mtab > /tmp/loot.txt
+          find . -type f -iname *.pdf > /tmp/loot.txt
+          find . -type f -name ".*"

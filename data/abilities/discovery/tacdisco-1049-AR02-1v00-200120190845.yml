@@ -1,0 +1,20 @@
+---
+
+- id: tacdisco-1049-AR02-1v00-200120190845
+  name: System Network Connections Discovery Linux & MacOS
+  description: .      Get a listing of network connections..  
+  tactic: discovery
+  technique:
+    attack_id: T1049
+    name: System Network Connections Discovery
+  platforms:
+    linux:
+      sh:
+        command: |
+          netstat
+          who -a
+    darwin:
+      sh:
+        command: |
+          netstat
+          who -a

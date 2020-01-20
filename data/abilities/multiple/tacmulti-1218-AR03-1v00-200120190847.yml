@@ -1,0 +1,13 @@
+---
+
+- id: tacmulti-1218-AR03-1v00-200120190847
+  name: Msiexec.exe - Execute Local MSI file
+  description: .      Execute arbitrary MSI file. Commonly seen in application installation..  
+  tactic: multiple
+  technique:
+    attack_id: T1218
+    name: Signed Binary Proxy Execution
+  platforms:
+    windows:
+      cmd:
+        command: |

@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1134-AR00-1v00-200120190846
+  name: Access Token Manipulation
+  description: .      Creates a process as another user.      Requires Administrator Privileges To Execute Test
+  tactic: multiple
+  technique:
+    attack_id: T1134
+    name: Access Token Manipulation
+  platforms:
+    windows:
+      psh:
+        command: |
+          #list processes by user,

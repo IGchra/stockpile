@@ -1,0 +1,18 @@
+---
+
+- id: tacdisco-1087-AR00-1v00-200120190846
+  name: Enumerate all accounts
+  description: .      Enumerate all accounts by copying /etc/passwd to another file
+  tactic: discovery
+  technique:
+    attack_id: T1087
+    name: Account Discovery 
+  platforms:
+    linux:
+      sh:
+        command: |
+          cat /etc/passwd > ~/loot.txt
+    darwin:
+      sh:
+        command: |
+          cat /etc/passwd > ~/loot.txt

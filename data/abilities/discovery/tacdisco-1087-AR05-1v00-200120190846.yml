@@ -1,0 +1,20 @@
+---
+
+- id: tacdisco-1087-AR05-1v00-200120190846
+  name: Enumerate users and groups
+  description: .      Utilize groups and id to enumerate users and groups
+  tactic: discovery
+  technique:
+    attack_id: T1087
+    name: Account Discovery 
+  platforms:
+    linux:
+      sh:
+        command: |
+          groups
+          id
+    darwin:
+      sh:
+        command: |
+          groups
+          id

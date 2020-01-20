@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1070-AR01-1v00-200120190845
+  name: FSUtil
+  description: .      Manages the update sequence number (USN) change journal, which provides a persistent log of all changes made to files on the volume.
+  tactic: defense-evasion
+  technique:
+    attack_id: T1070
+    name: Indicator Removal on Host
+  platforms:
+    windows:
+      cmd:
+        command: |
+          fsutil usn deletejournal /D C:

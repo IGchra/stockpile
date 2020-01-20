@@ -1,0 +1,17 @@
+---
+
+- id: tacmulti-1158-AR03-1v00-200120190847
+  name: Create Windows Hidden File with Attrib
+  description: .      Creates a file and marks it as hidden using the attrib.exe utility.
+  tactic: multiple
+  technique:
+    attack_id: T1158
+    name: Hidden Files and Directories
+  platforms:
+    windows:
+      cmd:
+        command: |
+          echo T1158_hidden > %TEMP%\T1158_hidden.txt
+          attrib.exe +h %TEMP%\T1158_hidden.txt
+        cleanup: |
+          del /A:H %TEMP%\T1158_hidden.txt

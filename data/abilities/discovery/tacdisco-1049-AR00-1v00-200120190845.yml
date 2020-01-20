@@ -1,0 +1,16 @@
+---
+
+- id: tacdisco-1049-AR00-1v00-200120190845
+  name: System Network Connections Discovery
+  description: .      Get a listing of network connections..  
+  tactic: discovery
+  technique:
+    attack_id: T1049
+    name: System Network Connections Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          netstat
+          net use
+          net sessions

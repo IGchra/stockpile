@@ -1,0 +1,13 @@
+---
+
+- id: tacmulti-1218-AR02-1v00-200120190847
+  name: Register-CimProvider - Execute evil dll
+  description: .      Execute arbitrary dll. Requires at least Windows 8/2012. Also note this dll can be served up via SMB.  
+  tactic: multiple
+  technique:
+    attack_id: T1218
+    name: Signed Binary Proxy Execution
+  platforms:
+    windows:
+      cmd:
+        command: |

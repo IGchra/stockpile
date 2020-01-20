@@ -1,0 +1,16 @@
+---
+
+- id: tacdefen-1073-AR00-1v00-200120190845
+  name: DLL Side-Loading using the Notepad++ GUP.exe binary
+  description: .      GUP is an open source signed binary used by Notepad++ for software updates, and is vulnerable to DLL Side-Loading, thus enabling the libcurl dll to be loaded.  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1073
+    name: DLL Side-Loading
+  platforms:
+    windows:
+      cmd:
+        command: |
+          $PathToAtomicsFolder\T1073\bin\GUP.exe
+        cleanup: |
+          taskkill /F /IM calculator.ex

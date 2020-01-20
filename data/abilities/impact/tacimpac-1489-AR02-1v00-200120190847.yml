@@ -1,0 +1,14 @@
+---
+
+- id: tacimpac-1489-AR02-1v00-200120190847
+  name: Windows - Stop service by killing process
+  description: .      Stops a specified service killng the service's process. .      This technique was used by WannaCry..  
+  tactic: impact
+  technique:
+    attack_id: T1489
+    name: Service Stop
+  platforms:
+    windows:
+      cmd:
+        command: |
+          taskkill.exe /f /im spoolsv.exe

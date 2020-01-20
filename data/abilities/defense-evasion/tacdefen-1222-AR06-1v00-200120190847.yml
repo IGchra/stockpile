@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1222-AR06-1v00-200120190847
+  name: attrib - Remove read-only attribute
+  description: .      Removes the read-only attribute from a file or folder using the attrib.exe command..  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1222
+    name: File Permissions Modification
+  platforms:
+    windows:
+      cmd:
+        command: |
+          attrib.exe -r PathToAtomicsFolder\T1222

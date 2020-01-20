@@ -1,0 +1,14 @@
+---
+
+- id: tacdisco-1016-AR01-1v00-200120190844
+  name: List Windows Firewall Rules
+  description: .      Enumerates Windows Firewall Rules using netsh..  
+  tactic: discovery
+  technique:
+    attack_id: T1016
+    name: System Network Configuration Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          netsh advfirewall firewall show rule name=all

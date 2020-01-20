@@ -1,0 +1,15 @@
+---
+
+- id: tacdisco-1124-AR00-1v00-200120190846
+  name: System Time Discovery
+  description: .      Identify the system time.  
+  tactic: discovery
+  technique:
+    attack_id: T1124
+    name: System Time Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          net time \\localhost
+          w32tm /tz

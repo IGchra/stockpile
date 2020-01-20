@@ -1,0 +1,17 @@
+---
+
+- id: tacmulti-1064-AR01-1v00-200120190845
+  name: Create and Execute Batch Script
+  description: .      Creates and executes a simple batch script..  
+  tactic: multiple
+  technique:
+    attack_id: T1064
+    name: Scripting
+  platforms:
+    windows:
+      cmd:
+        command: |
+          C:\Windows\system32\cmd.exe /Q /c echo dir > C:\Windows\TEMP\execute.bat
+          C:\Windows\system32\cmd.exe /Q /c C:\Windows\TEMP\execute.bat 
+        cleanup: |
+          del C:\Windows\TEMP\execute.bat

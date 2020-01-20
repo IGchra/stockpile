@@ -1,0 +1,18 @@
+---
+
+- id: tacmulti-1138-AR02-1v00-200120190846
+  name: Registry key creation and/or modification events for SDB
+  description: .      https://www.fireeye.com/blog/threat-research/2017/05/fin7-shim-databases-persistence.html
+  tactic: multiple
+  technique:
+    attack_id: T1138
+    name: Application Shimming
+  platforms:
+    windows:
+      psh:
+        command: |
+          New-ItemProperty -Path HKLM:"\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom" -Name "AtomicRedTeamT1138" -Value "AtomicRedTeamT1138"
+          New-ItemProperty -Path HKLM:"\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB" -Name "AtomicRedTeamT1138" -Value "AtomicRedTeamT1138"
+        cleanup: |
+          Remove-ItemProperty -Path HKLM:"\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom" -Name "AtomicRedTeamT1138"
+          Remove-ItemProperty -Path HKLM:"\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB" -Name "AtomicRedTeamT1138"

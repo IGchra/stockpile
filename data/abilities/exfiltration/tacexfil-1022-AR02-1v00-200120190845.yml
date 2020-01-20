@@ -1,0 +1,19 @@
+---
+
+- id: tacexfil-1022-AR02-1v00-200120190845
+  name: Compress Data and lock with password for Exfiltration with winzip
+  description: .      Note: Requires winzip installation.      wzzip sample.zip -s"blueblue" *.txt (VARIANT)
+  tactic: exfiltration
+  technique:
+    attack_id: T1022
+    name: Data Encrypted
+  platforms:
+    windows:
+      cmd:
+        command: |
+          path=%path%;"C:\Program Files (x86)\winzip"
+          mkdir .\tmp\victim-files
+          cd .\tmp\victim-files
+          echo "This file will be encrypted" > .\encrypted_file.txt
+          winzip32 -min -a -s"hello" archive.zip *
+          dir

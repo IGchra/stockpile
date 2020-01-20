@@ -1,0 +1,13 @@
+---
+
+- id: tacmulti-1127-AR00-1v00-200120190846
+  name: MSBuild Bypass Using Inline Tasks
+  description: .      Executes the code in a project file using. C# Example
+  tactic: multiple
+  technique:
+    attack_id: T1127
+    name: Trusted Developer Utilities
+  platforms:
+    windows:
+      cmd:
+        command: |

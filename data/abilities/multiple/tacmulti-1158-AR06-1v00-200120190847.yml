@@ -1,0 +1,16 @@
+---
+
+- id: tacmulti-1158-AR06-1v00-200120190847
+  name: Show all hidden files
+  description: .      Show all hidden files on MacOS
+  tactic: multiple
+  technique:
+    attack_id: T1158
+    name: Hidden Files and Directories
+  platforms:
+    darwin:
+      sh:
+        command: |
+          defaults write com.apple.finder AppleShowAllFiles YES
+        cleanup: |
+          defaults write com.apple.finder AppleShowAllFiles NO

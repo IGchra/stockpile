@@ -1,0 +1,14 @@
+---
+
+- id: tacdisco-1007-AR01-1v00-200120190844
+  name: System Service Discovery - net.exe
+  description: .      Enumerates started system services using net.exe and writes them to a file. This technique has been used by multiple threat actors.
+  tactic: discovery
+  technique:
+    attack_id: T1007
+    name: System Service Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          net.exe start >> C:\Windows\Temp\service-list.txt

@@ -1,0 +1,10 @@
+---
+
+- id: tacexecu-1086-AR11-1v00-200120190846
+  name: PowerShell Downgrade Attack
+  description: .      Attempts to run powershell commands in version 2.0 https://www.leeholmes.com/blog/2017/03/17/detecting-and-preventing-powershell-downgrade-attacks/.   
+  tactic: execution
+  technique:
+    attack_id: T1086
+    name: PowerShell
+  platforms:

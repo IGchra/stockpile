@@ -1,0 +1,18 @@
+---
+
+- id: tacdefen-1009-AR00-1v00-200120190844
+  name: Pad Binary to Change Hash - Linux/macOS dd
+  description: .      Uses dd to add a zero to the binary to change the hash.  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1009
+    name: Binary Padding
+  platforms:
+    darwin:
+      sh:
+        command: |
+          dd if=/dev/zero bs=1 count=1 >> /tmp/evil-binary
+    linux:
+      sh:
+        command: |
+          dd if=/dev/zero bs=1 count=1 >> /tmp/evil-binary

@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1099-AR05-1v00-200120190846
+  name: Windows - Modify file last modified timestamp with PowerShell
+  description: .      Modifies the file last modified timestamp of a specified file..  .      This technique was seen in use by the Stitch RAT..  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1099
+    name: Timestomp
+  platforms:
+    windows:
+      cmd:
+        command: |
+          powershell.exe Get-ChildItem C:\Some\file.txt | % { $_.LastWriteTime = '1970-01-01 00:00:00' }

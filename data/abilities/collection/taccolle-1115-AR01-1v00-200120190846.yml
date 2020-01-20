@@ -1,0 +1,15 @@
+---
+
+- id: taccolle-1115-AR01-1v00-200120190846
+  name: PowerShell
+  description: .      Utilize PowerShell to echo a command to clipboard and execute it
+  tactic: collection
+  technique:
+    attack_id: T1115
+    name: Clipboard Data
+  platforms:
+    windows:
+      psh:
+        command: |
+          echo Get-Process | clip
+          Get-Clipboard | iex

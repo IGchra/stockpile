@@ -1,0 +1,16 @@
+---
+
+- id: tacdefen-1143-AR00-1v00-200120190846
+  name: Hidden Window
+  description: .      Launch PowerShell with the "-WindowStyle Hidden" argument to conceal PowerShell windows by setting the WindowStyle parameter to hidden..  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1143
+    name: Hidden Window
+  platforms:
+    windows:
+      psh:
+        command: |
+          Start-Process powershell.exe -WindowStyle hidden calc.exe
+        cleanup: |
+          Stop-Process -Name "calculator

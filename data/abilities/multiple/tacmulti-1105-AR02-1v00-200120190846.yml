@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1105-AR02-1v00-200120190846
+  name: Windows - BITSAdmin BITS Download
+  description: .      This test uses BITSAdmin.exe to schedule a BITS job for the download of a file..      This technique is used by Qbot malware to download payloads.
+  tactic: multiple
+  technique:
+    attack_id: T1105
+    name: Remote File Copy
+  platforms:
+    windows:
+      cmd:
+        command: |
+          C:\Windows\System32\bitsadmin.exe /transfer qcxjb7 /Priority HIGH https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/LICENSE.txt Atomic-license.txt

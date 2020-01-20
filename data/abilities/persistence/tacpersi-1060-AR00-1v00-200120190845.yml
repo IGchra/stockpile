@@ -1,0 +1,15 @@
+---
+
+- id: tacpersi-1060-AR00-1v00-200120190845
+  name: Reg Key Run
+  description: .      Run Key Persistence.  
+  tactic: persistence
+  technique:
+    attack_id: T1060
+    name: Registry Run Keys / Start Folder
+  platforms:
+    windows:
+      cmd:
+        command: |
+            REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "Atomic Red Team" /t REG_SZ /F /D "C:\Path\AtomicRedTeam.exe"
+            REG DELETE "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "Atomic Red Team" /f

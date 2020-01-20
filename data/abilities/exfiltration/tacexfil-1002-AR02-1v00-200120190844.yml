@@ -1,0 +1,22 @@
+---
+
+- id: tacexfil-1002-AR02-1v00-200120190844
+  name: Data Compressed - nix - zip
+  description: .      An adversary may compress data (e.g., sensitive documents) that is collected prior to exfiltration. This test uses standard zip compression.
+  tactic: exfiltration
+  technique:
+    attack_id: T1002
+    name: Data Compressed
+  platforms:
+    linux:
+      sh:
+        command: |
+          zip $HOME/data.zip $HOME/*.txt
+        cleanup: |
+          rm -f $HOME/data.zip
+    darwin:
+      sh:
+        command: |
+          zip $HOME/data.zip $HOME/*.txt
+        cleanup: |
+          rm -f $HOME/data.zip

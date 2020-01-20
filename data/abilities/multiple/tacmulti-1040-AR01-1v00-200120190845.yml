@@ -1,0 +1,15 @@
+---
+
+- id: tacmulti-1040-AR01-1v00-200120190845
+  name: Packet Capture PowerShell
+  description: .      Perform a packet capture using PowerShell with windump or tshark. This will require a host that has Wireshark/Tshark.      installed, along with WinPCAP. Windump will require the windump executable.
+  tactic: multiple
+  technique:
+    attack_id: T1040
+    name: Network Sniffing
+  platforms:
+    windows:
+      psh:
+        command: |
+          c:\Program Files\Wireshark\tshark.exe -i Ethernet0 -c 5
+          c:\windump.exe
