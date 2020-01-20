@@ -1,0 +1,16 @@
+---
+
+- id: tacexfil-1002-AR00-1v00-200120184607
+  name: Compress Data for Exfiltration With PowerShell
+  description: .      An adversary may compress data (e.g., sensitive documents) that is collected prior to exfiltration 
+  tactic: exfiltration
+  technique:
+    attack_id: T1002
+    name: Data Compressed
+  platforms:
+    windows:
+      psh:
+        command: |
+          dir $env:USERPROFILE\Pictures -Recurse | Compress-Archive -DestinationPath $env:USERPROFILE\data.zip
+        cleanup: |
+          Remove-Item -path $env:USERPROFILE\data.zip

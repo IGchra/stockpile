@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1126-AR01-1v00-200120184608
+  name: Remove Network Share
+  description: .      Removes a Network Share utilizing the command_prompt.  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1126
+    name: Remove Network Share
+  platforms:
+    windows:
+      cmd:
+        command: |
+          net share \\test\share /delete

@@ -1,0 +1,14 @@
+---
+
+- id: tacimpac-1531-AR01-1v00-200120184608
+  name: Delete User - Windows
+  description: .      Deletes a user account to prevent access..  
+  tactic: impact
+  technique:
+    attack_id: T1531
+    name: Account Access Removal
+  platforms:
+    windows:
+      cmd:
+        command: |
+          net.exe user AtomicUser /delet

@@ -1,0 +1,18 @@
+---
+
+- id: tacexfil-1022-AR03-1v00-200120184608
+  name: Compress Data and lock with password for Exfiltration with 7zip
+  description: .      Note: Requires 7zip installation
+  tactic: exfiltration
+  technique:
+    attack_id: T1022
+    name: Data Encrypted
+  platforms:
+    windows:
+      cmd:
+        command: |
+          mkdir $PathToAtomicsFolder\T1022\victim-files
+          cd $PathToAtomicsFolder\T1022\victim-files
+          echo "This file will be encrypted" > .\encrypted_file.txt
+          7z a archive.7z -pblue
+          dir

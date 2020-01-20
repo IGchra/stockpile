@@ -1,0 +1,10 @@
+---
+
+- id: tacdisco-1082-AR06-1v00-200120184608
+  name: Hostname Discovery
+  description: .      Identify system hostname for Linux and macOS systems..  
+  tactic: discovery
+  technique:
+    attack_id: T1082
+    name: System Information Discovery
+  platforms:

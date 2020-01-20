@@ -1,0 +1,10 @@
+---
+
+- id: tacmulti-1168-AR01-1v00-200120184608
+  name: Cron - Add script to cron folder
+  description: .      This test adds a script to a cron folder configured to execute on a schedule. This technique was used by the threat actor Rocke during the exploitation of Linux web servers..  
+  tactic: multiple
+  technique:
+    attack_id: T1168
+    name: Local Job Scheduling
+  platforms:

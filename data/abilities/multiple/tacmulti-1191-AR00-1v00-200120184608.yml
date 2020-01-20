@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1191-AR00-1v00-200120184608
+  name: CMSTP Executing Remote Scriptlet
+  description: .      Adversaries may supply CMSTP.exe with INF files infected with malicious commands.  
+  tactic: multiple
+  technique:
+    attack_id: T1191
+    name: CMSTP
+  platforms:
+    windows:
+      cmd:
+        command: |
+          cmstp.exe /s T1191.inf

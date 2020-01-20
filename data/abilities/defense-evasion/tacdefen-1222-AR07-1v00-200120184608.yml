@@ -1,0 +1,10 @@
+---
+
+- id: tacdefen-1222-AR07-1v00-200120184608
+  name: chmod - Change file or folder mode (numeric mode)
+  description: .      Changes a file or folder's permissions using chmod and a specified numeric mode..  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1222
+    name: File Permissions Modification
+  platforms:

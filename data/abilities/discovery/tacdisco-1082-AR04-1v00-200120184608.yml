@@ -1,0 +1,10 @@
+---
+
+- id: tacdisco-1082-AR04-1v00-200120184608
+  name: Linux VM Check via Kernel Modules
+  description: .      Identify virtual machine guest kernel modules. This technique is used by the Pupy RAT and other malware..  
+  tactic: discovery
+  technique:
+    attack_id: T1082
+    name: System Information Discovery
+  platforms:

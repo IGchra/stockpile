@@ -1,0 +1,10 @@
+---
+
+- id: tacmulti-1105-AR04-1v00-200120184608
+  name: sftp remote file copy (push)
+  description: .      Utilize sftp to perform a remote file copy (push)
+  tactic: multiple
+  technique:
+    attack_id: T1105
+    name: Remote File Copy
+  platforms:

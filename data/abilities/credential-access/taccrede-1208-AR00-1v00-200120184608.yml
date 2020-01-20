@@ -1,0 +1,15 @@
+---
+
+- id: taccrede-1208-AR00-1v00-200120184608
+  name: Request for service tickets
+  description: .      This test uses the Powershell Empire Module: https://github.com/EmpireProject/Empire/blob/master/data/module_source/credentials/Invoke-Kerberoast.ps1.      .      The following are further sources and credits for this attack:.      [Kerberoasting Without Mimikatz source] (https://www.harmj0y.net/blog/powershell/kerberoasting-without-mimikatz/).      [Invoke-Kerberoast source] (https://powersploit.readthedocs.io/en/latest/Recon/Invoke-Kerberoast/).    
+  tactic: credential-access
+  technique:
+    attack_id: T1208
+    name: Kerberoasting
+  platforms:
+    windows:
+      psh:
+        command: |
+          Import-Module .\Invoke-Kerberoast.ps1
+          Invoke-Kerberoast | fl

@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1107-AR12-1v00-200120184608
+  name: Delete-PrefetchFile
+  description: .      Delete a single prefetch file.  Deletion of prefetch files is a known anti-forensic technique.
+  tactic: defense-evasion
+  technique:
+    attack_id: T1107
+    name: File Deletion
+  platforms:
+    windows:
+      psh:
+        command: |
+          Remove-Item -Path (Join-Path "$Env:SystemRoot\prefetch\" (Get-ChildItem -Path "$Env:SystemRoot\prefetch\*.pf" -Name)[0])

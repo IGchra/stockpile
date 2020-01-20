@@ -1,0 +1,10 @@
+---
+
+- id: tacdisco-1201-AR00-1v00-200120184608
+  name: Examine password complexity policy - Ubuntu
+  description: .      Lists the password complexity policy to console on Ubuntu Linux..  
+  tactic: discovery
+  technique:
+    attack_id: T1201
+    name: Password Policy Discovery 
+  platforms:

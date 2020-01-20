@@ -1,0 +1,15 @@
+---
+
+- id: tacdefen-1140-AR01-1v00-200120184608
+  name: Certutil Rename and Decode
+  description: .      Rename certutil and decode a file. This is in reference to latest research by FireEye [here](https://www.fireeye.com/blog/threat-research/2018/09/apt10-targeting-japanese-corporations-using-updated-ttps.html).  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1140
+    name: Deobfuscate/Decode Files Or Information
+  platforms:
+    windows:
+      cmd:
+        command: |
+          cmd.exe /c copy %windir%\\system32\\certutil.exe %temp%tcm.tmp
+          cmd.exe /c %temp%tcm.tmp -decode c:\file.exe file.txt

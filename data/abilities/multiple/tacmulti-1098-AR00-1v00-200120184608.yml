@@ -1,0 +1,18 @@
+---
+
+- id: tacmulti-1098-AR00-1v00-200120184608
+  name: Admin Account Manipulate
+  description: .      Manipulate Admin Account Name
+  tactic: multiple
+  technique:
+    attack_id: T1098
+    name: Account Manipulation
+  platforms:
+    windows:
+      psh:
+        command: |
+          $x = Get-Random -Minimum 2 -Maximum 9999
+          $y = Get-Random -Minimum 2 -Maximum 9999
+          $z = Get-Random -Minimum 2 -Maximum 9999
+          $w = Get-Random -Minimum 2 -Maximum 9999
+          Write-Host HaHaHa_$x$y$z$w

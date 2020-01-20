@@ -1,0 +1,14 @@
+---
+
+- id: tacdisco-1518-AR00-1v00-200120184608
+  name: Find and Display Iinternet Explorer Browser Version
+  description: .      Adversaries may attempt to get a listing of non-security related software that is installed on the system. Adversaries may use the information from Software Discovery during automated discovery to shape follow-on behaviors.  
+  tactic: discovery
+  technique:
+    attack_id: T1518
+    name: Software Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer" /v svcVersion

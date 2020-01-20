@@ -1,0 +1,18 @@
+---
+
+- id: tacpersi-1156-AR00-1v00-200120184608
+  name: Add command to .bash_profile
+  description: .      Adds a command to the .bash_profile file of the current user
+  tactic: persistence
+  technique:
+    attack_id: T1156
+    name: .bash_profile and .bashrc
+  platforms:
+    darwin:
+      sh:
+        command: |
+          echo "/path/to/script.py" >> ~/.bash_profile
+    linux:
+      sh:
+        command: |
+          echo "/path/to/script.py" >> ~/.bash_profile

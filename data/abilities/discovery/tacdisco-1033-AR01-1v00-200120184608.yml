@@ -1,0 +1,22 @@
+---
+
+- id: tacdisco-1033-AR01-1v00-200120184608
+  name: System Owner/User Discovery
+  description: .      Identify System owner or users on an endpoint.  
+  tactic: discovery
+  technique:
+    attack_id: T1033
+    name: System Owner/User Discovery
+  platforms:
+    linux:
+      sh:
+        command: |
+          users
+          w
+          who
+    darwin:
+      sh:
+        command: |
+          users
+          w
+          who

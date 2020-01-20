@@ -1,0 +1,17 @@
+---
+
+- id: tacdefen-1036-AR02-1v00-200120184608
+  name: Masquerading - cscript.exe running as notepad.exe
+  description: .      Copies cscript.exe, renames it, and launches it to masquerade as an instance of notepad.exe..  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1036
+    name: Masquerading
+  platforms:
+    windows:
+      cmd:
+        command: |
+          copy %SystemRoot%\System32\cscript.exe %APPDATA%\notepad.exe /Y
+          cmd.exe /c %APPDATA%\notepad.exe /B
+        cleanup: |
+          del /Q /F %APPDATA%\notepad.exe

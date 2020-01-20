@@ -1,0 +1,19 @@
+---
+
+- id: tacexecu-1086-AR12-1v00-200120184608
+  name: NTFS Alternate Data Stream Access
+  description: .      Creates a file with an alternate data stream and simulates executing that hidden code/file.  
+  tactic: execution
+  technique:
+    attack_id: T1086
+    name: PowerShell
+  platforms:
+    windows:
+      psh:
+        command: |
+          Add-Content -Path $env:TEMP\NTFS_ADS.txt -Value 'Write-Host "Stream Data Executed"' -Stream 'streamCommand'
+          $streamcommand = Get-Content -Path $env:TEMP\NTFS_ADS.txt -Stream 'streamcommand'
+          Invoke-Expression $streamcommand
+        cleanup: |
+          Remove:Item $env:TEMP\NTFS_ADS.txt
+          

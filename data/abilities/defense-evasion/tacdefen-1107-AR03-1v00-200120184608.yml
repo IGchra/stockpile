@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1107-AR03-1v00-200120184608
+  name: Delete a single file - Windows cmd
+  description: .      Delete a single file from the temporary directory using cmd.exe
+  tactic: defense-evasion
+  technique:
+    attack_id: T1107
+    name: File Deletion
+  platforms:
+    windows:
+      cmd:
+        command: |
+          del /f C:\Windows\Temp\victim.txt

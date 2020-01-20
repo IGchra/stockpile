@@ -1,0 +1,10 @@
+---
+
+- id: tacdefen-1107-AR11-1v00-200120184608
+  name: Delete Filesystem - Linux
+  description: .      This test deletes the entire root filesystem of a Linux system. This technique was used by Amnesia IoT malware to avoid analysis. This test is dangerous and destructive, do NOT use on production equipment.
+  tactic: defense-evasion
+  technique:
+    attack_id: T1107
+    name: File Deletion
+  platforms:

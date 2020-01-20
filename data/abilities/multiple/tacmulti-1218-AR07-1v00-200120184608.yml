@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1218-AR07-1v00-200120184608
+  name: InfDefaultInstall.exe .inf Execution
+  description: .      Test execution of a .inf using InfDefaultInstall.exe.  .      Reference: https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OSBinaries/Infdefaultinstall.yml
+  tactic: multiple
+  technique:
+    attack_id: T1218
+    name: Signed Binary Proxy Execution
+  platforms:
+    windows:
+      cmd:
+        command: |
+          InfDefaultInstall.exe PathToAtomicsFolder\T1218\src\Infdefaultinstall.inf

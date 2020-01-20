@@ -1,0 +1,10 @@
+---
+
+- id: tacimpac-1485-AR04-1v00-200120184608
+  name: macOS/Linux - Overwrite file with DD
+  description: .      Overwrites and deletes a file using DD..  .      To stop the test, break the command with CTRL/CMD+C.
+  tactic: impact
+  technique:
+    attack_id: T1485
+    name: Data Destruction
+  platforms:

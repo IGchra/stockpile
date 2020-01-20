@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1117-AR00-1v00-200120184608
+  name: Regsvr32 local COM scriptlet execution
+  description: .      Regsvr32.exe is a command-line program used to register and unregister OLE controls
+  tactic: multiple
+  technique:
+    attack_id: T1117
+    name: Regsvr32
+  platforms:
+    windows:
+      cmd:
+        command: |
+          regsvr32.exe /s /u /i:PathToAtomicsFolder\T1117\RegSvr32.sct scrobj.dll

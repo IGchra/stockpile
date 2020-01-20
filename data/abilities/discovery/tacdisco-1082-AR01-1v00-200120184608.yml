@@ -1,0 +1,22 @@
+---
+
+- id: tacdisco-1082-AR01-1v00-200120184608
+  name: System Information Discovery
+  description: .      Identify System Info.  
+  tactic: discovery
+  technique:
+    attack_id: T1082
+    name: System Information Discovery
+  platforms:
+    linux:
+      sh:
+        command: |
+          systemsetup
+          system_profiler
+          ls -al /Applications
+    darwin:
+      sh:
+        command: |
+          systemsetup
+          system_profiler
+          ls -al /Applications

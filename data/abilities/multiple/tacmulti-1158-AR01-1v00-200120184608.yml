@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1158-AR01-1v00-200120184608
+  name: Mac Hidden file
+  description: .      Hide a file on MacOS
+  tactic: multiple
+  technique:
+    attack_id: T1158
+    name: Hidden Files and Directories
+  platforms:
+    darwin:
+      sh:
+        command: |
+          xattr -lr * / 2>&1 /dev/null | grep -C 2 "00 00 00 00 00 00 00 00 40 00 FF FF FF FF 00 00"

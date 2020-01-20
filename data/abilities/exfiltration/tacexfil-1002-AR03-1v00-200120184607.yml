@@ -1,0 +1,22 @@
+---
+
+- id: tacexfil-1002-AR03-1v00-200120184607
+  name: Data Compressed - nix - gzip Single File
+  description: .      An adversary may compress data (e.g., sensitive documents) that is collected prior to exfiltration. This test uses standard gzip compression.
+  tactic: exfiltration
+  technique:
+    attack_id: T1002
+    name: Data Compressed
+  platforms:
+    linux:
+      sh:
+        command: |
+          test -e $HOME/victim-gzip.txt && gzip -k $HOME/victim-gzip.txt || (echo ''confidential! SSN: 078-05-1120 - CCN: 4000 1234 5678 9101'' >> $HOME/victim-gzip.txt; gzip -k $HOME/victim-gzip.txt)
+        cleanup: |
+          rm -f $HOME/victim-gzip.txt.gz
+    darwin:
+      sh:
+        command: |
+          test -e $HOME/victim-gzip.txt && gzip -k $HOME/victim-gzip.txt || (echo ''confidential! SSN: 078-05-1120 - CCN: 4000 1234 5678 9101'' >> $HOME/victim-gzip.txt; gzip -k $HOME/victim-gzip.txt)
+        cleanup: |
+          rm -f $HOME/victim-gzip.txt.gz

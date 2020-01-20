@@ -1,0 +1,15 @@
+---
+
+- id: taccolle-1005-AR00-1v00-200120184607
+  name: Search macOS Safari Cookies
+  description: .      This test uses `grep` to search a macOS Safari binaryCookies file for specified values. This was used by CookieMiner malware..  
+  tactic: collection
+  technique:
+    attack_id: T1005
+    name: Data from Local System
+  platforms:
+    darwin:
+      sh:
+        command: |
+          cd ~/Library/Cookies
+          grep -q "coinbase" "Cookies.binarycookies"

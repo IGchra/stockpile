@@ -1,0 +1,22 @@
+---
+
+- id: tacdisco-1016-AR02-1v00-200120184608
+  name: System Network Configuration Discovery
+  description: .      Identify network configuration information.  
+  tactic: discovery
+  technique:
+    attack_id: T1016
+    name: System Network Configuration Discovery
+  platforms:
+    darwin:
+      sh:
+        command: |
+          arp -a
+          netstat -ant | awk '{print $NF}' | grep -v '[a-z]' | sort | uniq -c
+          ifconfig
+    linux:
+      sh:
+        command: |
+          arp -a
+          netstat -ant | awk '{print $NF}' | grep -v '[a-z]' | sort | uniq -c
+          ifconfig

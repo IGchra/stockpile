@@ -1,0 +1,14 @@
+---
+
+- id: taclater-1077-AR02-1v00-200120184608
+  name: Copy and Execute File with PsExec
+  description: .      Copies a file to a remote host and executes it using PsExec. Requires the download of PsExec from [https://docs.microsoft.com/en-us/sysinternals/downloads/psexec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec).
+  tactic: lateral-movement
+  technique:
+    attack_id: T1077
+    name: Windows Admin Shares
+  platforms:
+    windows:
+      cmd:
+        command: |
+          C:/adrestia/adrestia/resources/tools/Sysinternals/psexec.exe \\localhost -c C:\Windows\System32\cmd.exe

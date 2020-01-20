@@ -1,0 +1,15 @@
+---
+
+- id: tacdefen-1140-AR00-1v00-200120184608
+  name: Deobfuscate/Decode Files Or Information
+  description: .      Encode/Decode executable.  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1140
+    name: Deobfuscate/Decode Files Or Information
+  platforms:
+    windows:
+      cmd:
+        command: |
+          certutil.exe -encode c:\file.exe file.txt
+          certutil.exe -decode file.txt c:\file.exe

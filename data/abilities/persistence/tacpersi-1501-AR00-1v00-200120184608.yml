@@ -1,0 +1,10 @@
+---
+
+- id: tacpersi-1501-AR00-1v00-200120184608
+  name: Create Systemd Service
+  description: .      This test creates a Systemd service unit file and enables it as a service..  
+  tactic: persistence
+  technique:
+    attack_id: T1501
+    name: Systemd Service
+  platforms:

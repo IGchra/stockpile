@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1085-AR01-1v00-200120184608
+  name: Rundll32 execute VBscript command
+  description: .      Test execution of a command using rundll32.exe and VBscript in a similar manner to the JavaScript test..  .      Technique documented by Hexacorn- http://www.hexacorn.com/blog/2019/10/29/rundll32-with-a-vbscript-protocol/
+  tactic: multiple
+  technique:
+    attack_id: T1085
+    name: Rundll32
+  platforms:
+    windows:
+      cmd:
+        command: |
+          rundll32 vbscript:"\..\mshtml,RunHTMLApplication "+String(CreateObject("WScript.Shell").Run("calc.exe"),0)

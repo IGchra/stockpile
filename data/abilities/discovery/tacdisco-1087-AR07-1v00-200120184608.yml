@@ -1,0 +1,19 @@
+---
+
+- id: tacdisco-1087-AR07-1v00-200120184608
+  name: Enumerate all accounts
+  description: .      Enumerate all accounts
+  tactic: discovery
+  technique:
+    attack_id: T1087
+    name: Account Discovery 
+  platforms:
+    windows:
+      cmd:
+        command: |
+          net user
+          net user /domain
+          dir c:\Users\
+          cmdkey.exe /list
+          net localgroup "Users"
+          net localgroup

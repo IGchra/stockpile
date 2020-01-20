@@ -1,0 +1,10 @@
+---
+
+- id: tacmulti-1040-AR00-1v00-200120184608
+  name: Packet Capture Linux
+  description: .      Perform a PCAP. Wireshark will be required for tshark. TCPdump may already be installed.
+  tactic: multiple
+  technique:
+    attack_id: T1040
+    name: Network Sniffing
+  platforms:

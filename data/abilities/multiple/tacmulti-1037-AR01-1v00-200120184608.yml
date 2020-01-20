@@ -1,0 +1,20 @@
+---
+
+- id: tacmulti-1037-AR01-1v00-200120184608
+  name: Starup Folder Script
+  description: .      A batch file on startup when placed in the start menu folder
+  tactic: multiple
+  technique:
+    attack_id: T1037
+    name: Logon Scripts
+  platforms:
+    windows:
+      psh:
+        command: |
+          New-Item "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\T1037.bat"
+          Set-Content "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\T1037.bat" "echo T1037"
+          New-Item "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\T1037.bat"
+          Set-Content "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\T1037.bat" "echo T1037"
+        cleanup: |
+          Remove-Item "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\T1037.bat"
+          Remove-Item "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\T1037.bat"

@@ -1,0 +1,14 @@
+---
+
+- id: taccolle-1123-AR01-1v00-200120184608
+  name: PowerShell Cmdlet via Windows command prompt
+  description: .      [AudioDeviceCmdlets](https://github.com/cdhunt/WindowsAudioDevice-Powershell-Cmdlet)
+  tactic: collection
+  technique:
+    attack_id: T1123
+    name: Audio Capture
+  platforms:
+    windows:
+      cmd:
+        command: |
+          powershell.exe -Command WindowsAudioDevice-Powershell-Cmdlet

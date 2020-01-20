@@ -1,0 +1,10 @@
+---
+
+- id: tacpersi-1136-AR04-1v00-200120184608
+  name: Create a new user in Linux with `root` UID and GID.
+  description: .      Creates a new user in Linux and adds the user to the `root` group. This technique was used by adversaries during the Butter attack campaign.
+  tactic: persistence
+  technique:
+    attack_id: T1136
+    name: Create Account
+  platforms:

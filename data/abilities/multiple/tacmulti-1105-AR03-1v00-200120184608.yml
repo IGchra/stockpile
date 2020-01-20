@@ -1,0 +1,10 @@
+---
+
+- id: tacmulti-1105-AR03-1v00-200120184608
+  name: scp remote file copy (pull)
+  description: .      Utilize scp to perform a remote file copy (pull)
+  tactic: multiple
+  technique:
+    attack_id: T1105
+    name: Remote File Copy
+  platforms:

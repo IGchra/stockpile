@@ -1,0 +1,14 @@
+---
+
+- id: tacdisco-1201-AR04-1v00-200120184608
+  name: Examine local password policy - Windows
+  description: .      Lists the local password policy to console on Windows..  
+  tactic: discovery
+  technique:
+    attack_id: T1201
+    name: Password Policy Discovery 
+  platforms:
+    windows:
+      cmd:
+        command: |
+          net accounts

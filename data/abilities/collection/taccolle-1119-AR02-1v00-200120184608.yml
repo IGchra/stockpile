@@ -1,0 +1,20 @@
+---
+
+- id: taccolle-1119-AR02-1v00-200120184608
+  name: Recon information for export with PowerShell
+  description: .      collect information for exfiltration.  
+  tactic: collection
+  technique:
+    attack_id: T1119
+    name: Automated Collection
+  platforms:
+    windows:
+      psh:
+        command: |
+          Get-Service > $env:TEMP\T1119_1.txt
+          Get-ChildItem Env: > $env:TEMP\T1119_2.txt
+          Get-Process > $env:TEMP\T1119_3.txt
+        cleanup: |
+          Remove-Item $env:TEMP\T1119_1.txt
+          Remove-Item $env:TEMP\T1119_2.txt
+          Remove-Item $env:TEMP\T1119_3.txt

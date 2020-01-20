@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1028-AR04-1v00-200120184608
+  name: Invoke-Command
+  description: .      Execute Invoke-command on remote host
+  tactic: multiple
+  technique:
+    attack_id: T1028
+    name: Windows Remote Management
+  platforms:
+    windows:
+      psh:
+        command: |
+          invoke-command -ComputerName Test -scriptblock {ipconfig}

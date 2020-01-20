@@ -1,0 +1,10 @@
+---
+
+- id: tacdefen-1089-AR07-1v00-200120184608
+  name: Unload Sysmon Filter Driver
+  description: .      Unloads the Sysinternals Sysmon filter driver without stopping the Sysmon service. 
+  tactic: defense-evasion
+  technique:
+    attack_id: T1089
+    name: Disabling Security Tools
+  platforms:

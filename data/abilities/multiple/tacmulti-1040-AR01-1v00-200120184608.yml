@@ -1,0 +1,10 @@
+---
+
+- id: tacmulti-1040-AR01-1v00-200120184608
+  name: Packet Capture MacOS
+  description: .      Perform a PCAP on MacOS. This will require Wireshark/tshark to be installed. TCPdump may already be installed.
+  tactic: multiple
+  technique:
+    attack_id: T1040
+    name: Network Sniffing
+  platforms:

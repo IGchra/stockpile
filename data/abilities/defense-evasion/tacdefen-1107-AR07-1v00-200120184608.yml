@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1107-AR07-1v00-200120184608
+  name: Delete VSS - vssadmin
+  description: .      Delete all volume shadow copies with vssadmin.exe
+  tactic: defense-evasion
+  technique:
+    attack_id: T1107
+    name: File Deletion
+  platforms:
+    windows:
+      cmd:
+        command: |
+          vssadmin.exe Delete Shadows /All /Quiet

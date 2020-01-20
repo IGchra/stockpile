@@ -1,0 +1,10 @@
+---
+
+- id: tacdisco-1201-AR01-1v00-200120184608
+  name: Examine password complexity policy - CentOS/RHEL 7.x
+  description: .      Lists the password complexity policy to console on CentOS/RHEL 7.x Linux..  
+  tactic: discovery
+  technique:
+    attack_id: T1201
+    name: Password Policy Discovery 
+  platforms:

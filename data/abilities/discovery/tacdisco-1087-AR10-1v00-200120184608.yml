@@ -1,0 +1,14 @@
+---
+
+- id: tacdisco-1087-AR10-1v00-200120184608
+  name: Enumerate logged on users via PowerShell
+  description: .      Enumerate logged on users via PowerShell
+  tactic: discovery
+  technique:
+    attack_id: T1087
+    name: Account Discovery 
+  platforms:
+    windows:
+      psh:
+        command: |
+          query user

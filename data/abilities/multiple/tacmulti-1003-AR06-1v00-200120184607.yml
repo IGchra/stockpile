@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1003-AR06-1v00-200120184607
+  name: Create Volume Shadow Copy with NTDS.dit
+  description: .      The Active Directory database NTDS.dit may be dumped by copying it from a Volume Shadow Copy.
+  tactic: multiple
+  technique:
+    attack_id: T1003
+    name: Credential Dumping
+  platforms:
+    windows:
+      cmd:
+        command: |
+          vssadmin.exe create shadow /for="C:"

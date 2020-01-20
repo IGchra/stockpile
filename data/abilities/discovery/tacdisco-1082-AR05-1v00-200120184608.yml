@@ -1,0 +1,14 @@
+---
+
+- id: tacdisco-1082-AR05-1v00-200120184608
+  name: Hostname Discovery (Windows)
+  description: .      Identify system hostname for Windows..  
+  tactic: discovery
+  technique:
+    attack_id: T1082
+    name: System Information Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          hostname

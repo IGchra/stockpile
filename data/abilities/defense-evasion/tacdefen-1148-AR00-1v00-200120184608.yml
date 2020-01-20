@@ -1,0 +1,20 @@
+---
+
+- id: tacdefen-1148-AR00-1v00-200120184608
+  name: Disable history collection
+  description: .      Disables history collection in shells
+  tactic: defense-evasion
+  technique:
+    attack_id: T1148
+    name: HISTCONTROL
+  platforms:
+    linux:
+      sh:
+        command: |
+          export HISTCONTROL=ignoreboth
+          ls whoami
+    darwin:
+      sh:
+        command: |
+          export HISTCONTROL=ignoreboth
+          ls whoami

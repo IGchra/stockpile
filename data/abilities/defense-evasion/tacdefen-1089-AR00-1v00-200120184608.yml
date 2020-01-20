@@ -1,0 +1,23 @@
+---
+
+- id: tacdefen-1089-AR00-1v00-200120184608
+  name: Disable iptables firewall
+  description: .      Disables the iptables firewall
+  tactic: defense-evasion
+  technique:
+    attack_id: T1089
+    name: Disabling Security Tools
+  platforms:
+    linux:
+      sh:
+        command: |
+          if [ $(rpm -q --queryformat '%{VERSION}' centos-release) -eq "6" ];
+          then
+            service iptables stop
+            chkconfig off iptables
+            service ip6tables stop
+            chkconfig off ip6tables
+          else if [ $(rpm -q --queryformat '%{VERSION}' centos-release) -eq "7" ];
+            systemctl stop firewalld
+            systemctl disable firewalld
+          fi

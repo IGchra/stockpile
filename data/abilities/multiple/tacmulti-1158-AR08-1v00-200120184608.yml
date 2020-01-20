@@ -1,0 +1,19 @@
+---
+
+- id: tacmulti-1158-AR08-1v00-200120184608
+  name: Create ADS PowerShell
+  description: .      Create an Alternate Data Stream with PowerShell. Write access is required.
+  tactic: multiple
+  technique:
+    attack_id: T1158
+    name: Hidden Files and Directories
+  platforms:
+    windows:
+      psh:
+        command: |
+          echo "test" > test.txt | set-content -path test.txt -stream adstest.txt -value "test"
+          set-content -path test.txt -stream adstest.txt -value "test2"
+          set-content -path . -stream adstest.txt -value "test3"
+          ls -Recurse | %{ gi $_.Fullname -stream *} | where stream -ne ':$Data' | Select-Object pschildname
+        cleanup: |
+          Remove-Item -Path test.txt

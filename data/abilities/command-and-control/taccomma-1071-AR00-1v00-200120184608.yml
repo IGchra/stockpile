@@ -1,0 +1,17 @@
+---
+
+- id: taccomma-1071-AR00-1v00-200120184608
+  name: Malicious User Agents
+  description: .      This test simulates an infected host beaconing to command and control..      Inspired by APTSimulator - https://github.com/NextronSystems/APTSimulator/blob/master/test-sets/command-and-control/malicious-user-agents.bat.  
+  tactic: command-and-control
+  technique:
+    attack_id: T1071
+    name: Standard Application Layer Protocol
+  platforms:
+    windows:
+      psh:
+        command: |
+          Invoke-WebRequest www.google.com -UseBasicParsing -UserAgent "HttpBrowser/1.0" | out-null
+          Invoke-WebRequest www.google.com -UseBasicParsing -UserAgent "Wget/1.9+cvs-stable (Red Hat modified)" | out-null
+          Invoke-WebRequest www.google.com -UseBasicParsing -UserAgent "Opera/8.81 (Windows NT 6.0; U; en)" | out-null
+          Invoke-WebRequest www.google.com -UseBasicParsing -UserAgent "*<|>*" | out-null

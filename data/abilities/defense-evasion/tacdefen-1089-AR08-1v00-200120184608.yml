@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1089-AR08-1v00-200120184608
+  name: Disable Windows IIS HTTP Logging
+  description: .      Disables HTTP logging on a Windows IIS web server as seen by Threat Group 3390 (Bronze Union). .      This action requires HTTP logging configurations in IIS to be unlocked.
+  tactic: defense-evasion
+  technique:
+    attack_id: T1089
+    name: Disabling Security Tools
+  platforms:
+    windows:
+      cmd:
+        command: |
+          C:\Windows\System32\inetsrv\appcmd.exe set config "Default Web Site" /section:httplogging /dontLog:true

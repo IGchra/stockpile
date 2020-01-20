@@ -1,0 +1,15 @@
+---
+
+- id: tacdefen-1107-AR04-1v00-200120184608
+  name: Delete an entire folder - Windows cmd
+  description: .      Recursively delete the temporary directory and all files contained within it using cmd.exe
+  tactic: defense-evasion
+  technique:
+    attack_id: T1107
+    name: File Deletion
+  platforms:
+    windows:
+      cmd:
+        command: |
+          del /f /S C:\Windows\Temp\victim-files
+          Y

