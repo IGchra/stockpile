@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1196-AR00-1v00-200121075651
+  name: Control Panel Items 
+  description: .       This test simulates an adversary leveraging control.exe to execute a payload and pops calc.  
+  tactic: multiple
+  technique:
+    attack_id: T1196
+    name: Control Panel Items
+  platforms:
+    windows:
+      cmd:
+        command: |
+          control.exe  calc.cpl

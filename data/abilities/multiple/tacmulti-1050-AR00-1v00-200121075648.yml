@@ -1,0 +1,18 @@
+---
+
+- id: tacmulti-1050-AR00-1v00-200121075648
+  name: Service Installation
+  description: .      Installs A Local Service.  
+  tactic: multiple
+  technique:
+    attack_id: T1050
+    name: Service Installation
+  platforms:
+    windows:
+      cmd:
+        command: |
+          sc.exe create AtomicTestService binPath= PathToAtomicsFolder\T1050\bin\AtomicService.exe
+          sc.exe start AtomicTestService
+        cleanup: |
+          sc.exe stop AtomicTestService
+          sc.exe delete AtomicTestService

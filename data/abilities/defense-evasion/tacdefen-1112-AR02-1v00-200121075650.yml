@@ -1,0 +1,16 @@
+---
+
+- id: tacdefen-1112-AR02-1v00-200121075650
+  name: Modify Registry of Another User Profile
+  description: .      Modify a registry key of each user profile not currently loaded on the machine using both powershell and cmd line tools.
+  tactic: defense-evasion
+  technique:
+    attack_id: T1112
+    name: Modify Registry
+  platforms:
+    windows:
+      psh:
+        command: |
+          # here is an example of using the same method of reg load, but without the New-PSDrive cmdlet.
+          # Here we can load all unloaded user hives and do whatever we want in the location below (comments)
+          $PatternSID = 'S-1-5-21-\d+-\d+\-\d+\-\d+$'

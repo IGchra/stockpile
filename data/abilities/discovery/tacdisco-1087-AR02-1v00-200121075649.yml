@@ -1,0 +1,18 @@
+---
+
+- id: tacdisco-1087-AR02-1v00-200121075649
+  name: View accounts with UID 0
+  description: .      View accounts wtih UID 0
+  tactic: discovery
+  technique:
+    attack_id: T1087
+    name: Account Discovery 
+  platforms:
+    linux:
+      sh:
+        command: |
+          grep 'x:0:' /etc/passwd > ~/loot.txt
+    darwin:
+      sh:
+        command: |
+          grep 'x:0:' /etc/passwd > ~/loot.txt

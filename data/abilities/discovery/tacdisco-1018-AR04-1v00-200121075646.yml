@@ -1,0 +1,14 @@
+---
+
+- id: tacdisco-1018-AR04-1v00-200121075646
+  name: Remote System Discovery - arp
+  description: .      Identify remote systems via arp.  
+  tactic: discovery
+  technique:
+    attack_id: T1018
+    name: Remote System Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          arp -a

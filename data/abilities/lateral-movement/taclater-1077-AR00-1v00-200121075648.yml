@@ -1,0 +1,14 @@
+---
+
+- id: taclater-1077-AR00-1v00-200121075648
+  name: Map admin share
+  description: .      Connecting To Remote Shares.  
+  tactic: lateral-movement
+  technique:
+    attack_id: T1077
+    name: Windows Admin Shares
+  platforms:
+    windows:
+      cmd:
+        command: |
+          cmd.exe /c "net use \\Target\C$ P@ssw0rd1 /u:DOMAIN\Administrator"

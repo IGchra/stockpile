@@ -1,0 +1,15 @@
+---
+
+- id: tacdisco-1069-AR01-1v00-200121075648
+  name: Basic Permission Groups Discovery Windows
+  description: .      Basic Permission Groups Discovery for Windows.  
+  tactic: discovery
+  technique:
+    attack_id: T1069
+    name: Permission Groups Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          net localgroup
+          net group /domain

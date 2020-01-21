@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1089-AR06-1v00-200121075649
+  name: Disable OpenDNS Umbrella
+  description: .      Disables OpenDNS Umbrella
+  tactic: defense-evasion
+  technique:
+    attack_id: T1089
+    name: Disabling Security Tools
+  platforms:
+    darwin:
+      sh:
+        command: |
+          sudo launchctl unload /Library/LaunchDaemons/com.opendns.osx.RoamingClientConfigUpdater.plist

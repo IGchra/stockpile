@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1216-AR01-1v00-200121075651
+  name: SyncAppvPublishingServe Signed Script PowerShell Command Execution
+  description: .      Executes the signed SyncAppvPublishingServe script with options to execute an arbitrary PowerShell command..  
+  tactic: multiple
+  technique:
+    attack_id: T1216
+    name: Signed Script Proxy Execution
+  platforms:
+    windows:
+      cmd:
+        command: |
+          C:\windows\system32\SyncAppvPublishingServe.vbs “\n;Start-Process calc”

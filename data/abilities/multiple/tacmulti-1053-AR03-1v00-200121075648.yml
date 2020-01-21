@@ -1,0 +1,21 @@
+---
+
+- id: tacmulti-1053-AR03-1v00-200121075648
+  name: Powershell Cmdlet Scheduled Task
+  description: .      Create an atomic scheduled task that leverages native powershell cmdlets. .      These could be concidered "fileless" scheduled task creation.
+  tactic: multiple
+  technique:
+    attack_id: T1053
+    name: Scheduled Task
+  platforms:
+    windows:
+      psh:
+        command: |
+          $Action = New-ScheduledTaskAction -Execute "calc.exe"
+          $Trigger = New-ScheduledTaskTrigger -AtLogon
+          $User = New-ScheduledTaskPrincipal -GroupId "BUILTIN\Administrators" -RunLevel Highest
+          $Set = New-ScheduledTaskSettingsSet
+          $object = New-ScheduledTask -Action $Action -Principal $User -Trigger $Trigger -Settings $Set
+          Register-ScheduledTask AtomicTask -InputObject $object
+        cleanup: |
+          Unregister-ScheduledTask -TaskName "AtomicTask" -confirm:$false

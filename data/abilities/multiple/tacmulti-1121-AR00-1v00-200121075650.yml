@@ -1,0 +1,16 @@
+---
+
+- id: tacmulti-1121-AR00-1v00-200121075650
+  name: Regasm Uninstall Method Call Test
+  description: .      Executes the Uninstall Method, No Admin Rights Required
+  tactic: multiple
+  technique:
+    attack_id: T1121
+    name: RegSvcs/RegAsm
+  platforms:
+    windows:
+      cmd:
+        command: |
+          C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /r:System.EnterpriseServices.dll /target:library PathToAtomicsFolder\T1121\src\T1121.cs
+          C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe /U T1121.dll
+          del T1121.dll

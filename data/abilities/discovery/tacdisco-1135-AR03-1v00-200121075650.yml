@@ -1,0 +1,14 @@
+---
+
+- id: tacdisco-1135-AR03-1v00-200121075650
+  name: View avaliabe share drives
+  description: .      View information about all of the resources that are shared on the local computer
+  tactic: discovery
+  technique:
+    attack_id: T1135
+    name: Network Share Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          net share

@@ -1,0 +1,16 @@
+---
+
+- id: tacpersi-1136-AR01-1v00-200121075650
+  name: Create a new user in PowerShell
+  description: .      Creates a new user in PowerShell
+  tactic: persistence
+  technique:
+    attack_id: T1136
+    name: Create Account
+  platforms:
+    windows:
+      psh:
+        command: |
+          New-LocalUser -Name "T1136_PowerShell" -NoPassword
+        cleanup: |
+          Remove-LocalUser -Name "T1136_PowerShell"

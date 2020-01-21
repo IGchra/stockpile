@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1222-AR01-1v00-200121075651
+  name: Take ownership recursively using takeown utility
+  description: .      Modifies the filesystem permissions of the specified folder to take ownership of it and its contents..  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1222
+    name: File Permissions Modification
+  platforms:
+    windows:
+      cmd:
+        command: |
+          takeown.exe /f PathToAtomicsFolder\T1222 /r

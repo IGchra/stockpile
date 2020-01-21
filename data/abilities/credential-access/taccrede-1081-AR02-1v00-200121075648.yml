@@ -1,0 +1,15 @@
+---
+
+- id: taccrede-1081-AR02-1v00-200121075648
+  name: Runs Mimikatz & Mimikittenz by name
+  description: .      Mimikatz/kittenz - This will require a Mimikatz executable or invoke-mimikittenz ps module.
+  tactic: credential-access
+  technique:
+    attack_id: T1081
+    name: Credentials in Files
+  platforms:
+    windows:
+      psh:
+        command: |
+          invoke-mimikittenz
+          mimikatz.exe

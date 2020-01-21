@@ -1,0 +1,18 @@
+---
+
+- id: tacmulti-1165-AR00-1v00-200121075651
+  name: Startup Items (emond rule)
+  description: .      Establish persistence via a rule run by emond daemon at startup, based on https.//posts.specterops.io/leveraging-emond-on-macos-for-persistence-a040a2785124.  
+  tactic: multiple
+  technique:
+    attack_id: T1165
+    name: Startup Items
+  platforms:
+    darwin:
+      sh:
+        command: |
+          sudo cp "/path/to/T1165_emond.plist" /etc/emond.d/rules/T1165_emond.plist
+          sudo touch /private/var/db/emondClients/T1165
+        cleanup: |
+          sudo rm /etc/emond.d/rules/T1165_emond.plist
+          sudo rm /private/var/db/emondClients/T1165

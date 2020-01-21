@@ -1,0 +1,20 @@
+---
+
+- id: tacmulti-1166-AR01-1v00-200121075651
+  name: Set a SetGID flag on file
+  description: .      This test sets the SetGID flag on a file in Linux and macOS.
+  tactic: multiple
+  technique:
+    attack_id: T1166
+    name: Setuid and Setgid
+  platforms:
+    darwin:
+      sh:
+        command: |
+          sudo chown root /tmp/evilBinary
+          sudo chmod g+s /tmp/evilBinary
+    linux:
+      sh:
+        command: |
+          sudo chown root /tmp/evilBinary
+          sudo chmod g+s /tmp/evilBinary

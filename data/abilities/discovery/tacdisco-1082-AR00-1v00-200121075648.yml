@@ -1,0 +1,15 @@
+---
+
+- id: tacdisco-1082-AR00-1v00-200121075648
+  name: System Information Discovery
+  description: .      Identify System Info.  
+  tactic: discovery
+  technique:
+    attack_id: T1082
+    name: System Information Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          systeminfo
+          reg query HKLM\SYSTEM\CurrentControlSet\Services\Disk\Enum

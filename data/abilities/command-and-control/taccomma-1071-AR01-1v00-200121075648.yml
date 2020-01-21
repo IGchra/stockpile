@@ -1,0 +1,24 @@
+---
+
+- id: taccomma-1071-AR01-1v00-200121075648
+  name: Malicious User Agents - Nix
+  description: .      This test simulates an infected host beaconing to command and control..      Inspired by APTSimulator - https.//github.com/NextronSystems/APTSimulator/blob/master/test-sets/command-and-control/malicious-user-agents.bat.  
+  tactic: command-and-control
+  technique:
+    attack_id: T1071
+    name: Standard Application Layer Protocol
+  platforms:
+    linux:
+      sh:
+        command: |
+          curl -s -A "HttpBrowser/1.0" -m3 www.google.com
+          curl -s -A "Wget/1.9+cvs-stable (Red Hat modified)" -m3 www.google.com
+          curl -s -A "Opera/8.81 (Windows NT 6.0; U; en)" -m3 www.google.com
+          curl -s -A "*<|>*" -m3 www.google.com
+    darwin:
+      sh:
+        command: |
+          curl -s -A "HttpBrowser/1.0" -m3 www.google.com
+          curl -s -A "Wget/1.9+cvs-stable (Red Hat modified)" -m3 www.google.com
+          curl -s -A "Opera/8.81 (Windows NT 6.0; U; en)" -m3 www.google.com
+          curl -s -A "*<|>*" -m3 www.google.com

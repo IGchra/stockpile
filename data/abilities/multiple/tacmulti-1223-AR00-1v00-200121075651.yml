@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1223-AR00-1v00-200121075651
+  name: Compiled HTML Help Local Payload
+  description: .      Uses hh.exe to execute a local compiled HTML Help payload..  
+  tactic: multiple
+  technique:
+    attack_id: T1223
+    name: Compiled HTML File
+  platforms:
+    windows:
+      cmd:
+        command: |
+          hh.exe PathToAtomicsFolder\T1223\src\T1223.chm

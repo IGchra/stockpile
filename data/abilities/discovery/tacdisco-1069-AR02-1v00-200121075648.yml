@@ -1,0 +1,15 @@
+---
+
+- id: tacdisco-1069-AR02-1v00-200121075648
+  name: Permission Groups Discovery PowerShell
+  description: .      Permission Groups Discovery utilizing PowerShell.  
+  tactic: discovery
+  technique:
+    attack_id: T1069
+    name: Permission Groups Discovery
+  platforms:
+    windows:
+      psh:
+        command: |
+          get-localgroup
+          get-ADPrinicipalGroupMembership administrator | select name

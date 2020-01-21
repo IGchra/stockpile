@@ -1,0 +1,14 @@
+---
+
+- id: taciniti-1193-AR01-1v00-200121075651
+  name: Word spawned a command shell and used an IP address in the command line
+  description: .      Opens a word document that will run powershell and perform an nslookup on the IP 192.168.1.1 and a sleep command
+  tactic: initial-access
+  technique:
+    attack_id: T1193
+    name: Spearphishing Attachment
+  platforms:
+    windows:
+      psh:
+        command: |
+          Start-Process $PathToAtomicsFolder\T1193\bin\PowerShell_IP_Doc.doc

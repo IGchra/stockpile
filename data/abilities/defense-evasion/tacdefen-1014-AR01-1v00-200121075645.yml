@@ -1,0 +1,14 @@
+---
+
+- id: tacdefen-1014-AR01-1v00-200121075645
+  name: Loadable Kernel Module based Rootkit
+  description: .      Loadable Kernel Module based Rootkit.  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1014
+    name: Loadable Kernel Module based Rootkit
+  platforms:
+    linux:
+      sh:
+        command: |
+          sudo modprobe Module.ko

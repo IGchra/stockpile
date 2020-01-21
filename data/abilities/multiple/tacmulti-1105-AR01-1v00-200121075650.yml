@@ -1,0 +1,18 @@
+---
+
+- id: tacmulti-1105-AR01-1v00-200121075650
+  name: certutil download (verifyctl)
+  description: .      Use certutil -verifyctl argument to download a file from the web. Note - /verifyctl also works!
+  tactic: multiple
+  technique:
+    attack_id: T1105
+    name: Remote File Copy
+  platforms:
+    windows:
+      psh:
+        command: |
+          $datePath = "certutil-$(Get-Date -format yyyy_MM_dd_HH_mm)"
+          New-Item -Path $datePath -ItemType Directory
+          Set-Location $datePath
+          certutil -verifyctl -split -f https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/LICENSE.txt
+          Get-ChildItem | Where-Object {$_.Name -notlike "*.txt"} | Foreach-Object { Move-Item $_.Name -Destination Atomic-license.txt }

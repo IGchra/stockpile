@@ -1,0 +1,16 @@
+---
+
+- id: tacdefen-1089-AR08-1v00-200121075649
+  name: Uninstall Sysmon
+  description: .      Uninstall Sysinternals Sysmon for Defense Evasion.  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1089
+    name: Disabling Security Tools
+  platforms:
+    windows:
+      cmd:
+        command: |
+          sysmon -u
+        cleanup: |
+          sysmon -i -accepteula

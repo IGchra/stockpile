@@ -1,0 +1,15 @@
+---
+
+- id: tacdisco-1135-AR02-1v00-200121075650
+  name: Network Share Discovery PowerShell
+  description: .      Network Share Discovery utilizing PowerShell
+  tactic: discovery
+  technique:
+    attack_id: T1135
+    name: Network Share Discovery
+  platforms:
+    windows:
+      psh:
+        command: |
+          net view \\computer1
+          get-smbshare -Name computer1

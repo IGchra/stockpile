@@ -1,0 +1,18 @@
+---
+
+- id: taccrede-1081-AR01-1v00-200121075648
+  name: Extract passwords with grep
+  description: .      Extracting credentials from files.    input_arguments..      file_path..        description. Path to search.        type. String.        default. /
+  tactic: credential-access
+  technique:
+    attack_id: T1081
+    name: Credentials in Files
+  platforms:
+    darwin:
+      sh:
+        command: |
+          grep -ri password #{file_path}
+    linux:
+      sh:
+        command: |
+          grep -ri password #{file_path}

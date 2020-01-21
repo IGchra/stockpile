@@ -1,0 +1,18 @@
+---
+
+- id: tacdefen-1222-AR07-1v00-200121075651
+  name: chattr - Remove immutable file attribute
+  description: .      Remove's a file's `immutable` attribute using `chattr`..      This technique was used by the threat actor Rocke during the compromise of Linux web servers.
+  tactic: defense-evasion
+  technique:
+    attack_id: T1222
+    name: File Permissions Modification
+  platforms:
+    darwin:
+      sh:
+        command: |
+          chattr -i /var/spool/cron/root
+    linux:
+      sh:
+        command: |
+          chattr -i /var/spool/cron/root

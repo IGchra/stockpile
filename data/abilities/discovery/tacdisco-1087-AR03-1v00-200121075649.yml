@@ -1,0 +1,18 @@
+---
+
+- id: tacdisco-1087-AR03-1v00-200121075649
+  name: List opened files by user
+  description: .      List opened files by user
+  tactic: discovery
+  technique:
+    attack_id: T1087
+    name: Account Discovery 
+  platforms:
+    linux:
+      sh:
+        command: |
+          username=$(echo $HOME | awk -F'/' '{print $3}') && lsof -u $username
+    darwin:
+      sh:
+        command: |
+          username=$(echo $HOME | awk -F'/' '{print $3}') && lsof -u $username

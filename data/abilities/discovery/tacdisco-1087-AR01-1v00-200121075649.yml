@@ -1,0 +1,18 @@
+---
+
+- id: tacdisco-1087-AR01-1v00-200121075649
+  name: View sudoers access
+  description: .      (requires root)
+  tactic: discovery
+  technique:
+    attack_id: T1087
+    name: Account Discovery 
+  platforms:
+    linux:
+      sh:
+        command: |
+          cat /etc/sudoers > ~/loot.txt
+    darwin:
+      sh:
+        command: |
+          cat /etc/sudoers > ~/loot.txt

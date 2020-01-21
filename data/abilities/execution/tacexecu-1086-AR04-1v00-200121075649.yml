@@ -1,0 +1,17 @@
+---
+
+- id: tacexecu-1086-AR04-1v00-200121075649
+  name: PowerShell Add User
+  description: .      Using PS 5.1, add a user via CLI.  
+  tactic: execution
+  technique:
+    attack_id: T1086
+    name: PowerShell
+  platforms:
+    windows:
+      psh:
+        command: |
+          $password = convertto-securestring 'ATOM1CR3DT3@M' -asplaintext -force;
+          New-LocalUser -FullName 'Atomic Red Team' -Name 'atomic_user' -Password $password -Description 'Atomic Things'
+        cleanup: |
+          Remove-LocalUser -Name 'atomic_user'

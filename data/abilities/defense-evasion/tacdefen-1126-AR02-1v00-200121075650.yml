@@ -1,0 +1,15 @@
+---
+
+- id: tacdefen-1126-AR02-1v00-200121075650
+  name: Remove Network Share PowerShell
+  description: .      Removes a Network Share utilizing PowerShell.  
+  tactic: defense-evasion
+  technique:
+    attack_id: T1126
+    name: Remove Network Share
+  platforms:
+    windows:
+      psh:
+        command: |
+          Remove-SmbShare -Name \\test\share
+          Remove-FileShare -Name \\test\share

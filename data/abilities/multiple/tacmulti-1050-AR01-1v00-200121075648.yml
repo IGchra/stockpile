@@ -1,0 +1,18 @@
+---
+
+- id: tacmulti-1050-AR01-1v00-200121075648
+  name: Service Installation PowerShell
+  description: .        Installs A Local Service via PowerShell.  
+  tactic: multiple
+  technique:
+    attack_id: T1050
+    name: Service Installation
+  platforms:
+    windows:
+      psh:
+        command: |
+          New-Service -Name "AtomicTestService" -BinaryPathName "PathToAtomicsFolder\T1050\bin\AtomicService.exe"
+          Start-Service -Name "AtomicTestService"
+        cleanup: |
+          Stop-Service -Name "AtomicTestService"
+          (Get-WmiObject Win32_Service -filter "name='AtomicTestService'").Delete()

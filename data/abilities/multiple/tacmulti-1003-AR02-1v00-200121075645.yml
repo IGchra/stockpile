@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1003-AR02-1v00-200121075645
+  name: Windows Credential Editor
+  description: .      http.//www.ampliasecurity.com/research/windows-credentials-editor/
+  tactic: multiple
+  technique:
+    attack_id: T1003
+    name: Credential Dumping
+  platforms:
+    windows:
+      cmd:
+        command: |
+          C:/adrestia/adrestia/resources/tools/wce/wce -o output.txt

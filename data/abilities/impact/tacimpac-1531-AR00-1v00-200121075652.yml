@@ -1,0 +1,14 @@
+---
+
+- id: tacimpac-1531-AR00-1v00-200121075652
+  name: Change User Password - Windows
+  description: .      Changes the user password to hinder access attempts. Seen in use by LockerGoga..  
+  tactic: impact
+  technique:
+    attack_id: T1531
+    name: Account Access Removal
+  platforms:
+    windows:
+      cmd:
+        command: |
+          net.exe user Administrator HuHuHUHoHo283283@dJD

@@ -1,0 +1,15 @@
+---
+
+- id: taccolle-1114-AR00-1v00-200121075650
+  name: T1114 Email Collection with PowerShell
+  description: .      Search through local Outlook installation, extract mail, compress the contents, and saves everything to a directory for later exfiltration..    
+  tactic: collection
+  technique:
+    attack_id: T1114
+    name: Email Collection
+  platforms:
+    windows:
+      cmd:
+        command: |
+          Display email contents in the terminal
+            PS C:\> .\Get-Inbox.ps1

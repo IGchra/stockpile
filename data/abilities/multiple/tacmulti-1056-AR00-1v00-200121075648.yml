@@ -1,0 +1,14 @@
+---
+
+- id: tacmulti-1056-AR00-1v00-200121075648
+  name: Input Capture
+  description: .      Utilize PowerShell and external resource to capture keystrokes.      [Payload](https.//github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1056/src/Get-Keystrokes.ps1).      Provided by [PowerSploit](https.//github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-Keystrokes.ps1).  
+  tactic: multiple
+  technique:
+    attack_id: T1056
+    name: Input Capture
+  platforms:
+    windows:
+      psh:
+        command: |
+          $PathToAtomicsFolder\T1056\src\Get-Keystrokes.ps1 -LogPath #{filepath}
